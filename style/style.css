@@ -3,7 +3,8 @@ body {
   background: #0087ce;
   font-family: "Droid Serif", serif;
   width: 1210px;
-  margin: 4em auto; }
+  margin: 6em auto;
+  font-size: 62.5%; }
 
 h1, h2 {
   color: white;
@@ -13,10 +14,12 @@ article {
   margin-bottom: 3em;
   padding-top: 0.25em; }
   article h2 {
-    font-size: 2em;
+    font-size: 2.5em;
     color: #0087ce; }
   article p {
-    line-height: 1.4; }
+    line-height: 1.5;
+    font-size: 1.6em;
+    color: #222222; }
 
 #mynav {
   width: 270px;
@@ -27,16 +30,19 @@ article {
   #mynav h1 {
     color: white;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
-    font-size: 3em; }
+    font-size: 4.3em; }
+  #mynav h2 {
+    font-size: 2em; }
   #mynav h3 {
-    margin-top: 2em; }
+    margin-top: 2em;
+    font-size: 1.8em; }
   #mynav ul {
     background: white;
     border-radius: 4;
-    padding: 0.25em 1em; }
+    padding: 0.5em 2em; }
     #mynav ul li {
       list-style: none;
-      padding: 0.5em 0; }
+      padding: 1em 0; }
       #mynav ul li a {
         color: black;
         text-decoration: none; }
