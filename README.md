@@ -5,7 +5,7 @@
 
 Setup: 
 
-sections : '.floatScrollItem' // selector for sections 
-links : '.floatLink'	// links to sections
-activeClass : 'active'	// toggle class for active links/sections
-linksClass : 'floatLink'	// selector for links 
+* sections : '.floatScrollItem' // selector for sections 
+* links : '.floatLink'	// links to sections
+* activeClass : 'active'	// toggle class for active links/sections
+* linksClass : 'floatLink'	// selector for links 
