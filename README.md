@@ -1,11 +1,7 @@
 ##Scrolling Navigation
 
-* Includes a fixed nav with smooth scroll links
-* Links add active class as each section is reached
+### A lightweight scrolling navigation plugin
 
-Setup: 
+This plugin provides the ability to have a fixed navigation whose internal links toggle active states based on the sections they represent
 
-* sections 		: ".floatScrollItem" 	// selector for sections 
-* links 		: ".floatLink"			// links to sections
-* activeClass 	: "active"				// toggle class for active links/sections
-* linksClass 	: "floatLink"			// selector for links 
+
