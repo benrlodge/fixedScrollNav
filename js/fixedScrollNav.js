@@ -13,7 +13,7 @@
         activeClass: 'active',
         animated: true,
         scrollSpeed: 900,
-        threshold: 100
+        threshold: ''
       };
       settings = $.extend(settings, options);
       log = function(msg) {
@@ -40,11 +40,11 @@
         return (scroll = function() {
           return $(window).scroll(function() {
             var currentPosition;
-            currentPosition = $(this).scrollTop();
             $(settings.links).removeClass(settings.activeClass);
+            currentPosition = $(this).scrollTop();
             return $(settings.sections).each(function() {
               var bottom, top;
-              top = $(this).offset().top;
+              top = $(this).offset().top - Number(settings.threshold) - Number(1);
               bottom = top + $(this).height();
               if (currentPosition >= top && currentPosition <= bottom) {
                 return $("a[href=\"#" + this.id + "\"]").addClass(settings.activeClass);

@@ -12,7 +12,7 @@ $.fn.extend
       animated    : true
       scrollSpeed : 900
 
-      threshold   : 100           # Update navigation x number of pixels before elements position
+      threshold   : ''           # Update navigation x number of pixels before elements position. You may need to tweak this number for the active links to work properly based on the margin and padding between your sections
 
 
     settings = $.extend settings, options
@@ -37,10 +37,12 @@ $.fn.extend
 
       (scroll = ->
         $(window).scroll ->
-          currentPosition = $(this).scrollTop()
           $( settings.links ).removeClass( settings.activeClass )
+        
+          currentPosition = $(this).scrollTop()
+        
           $( settings.sections ).each ->
-            top = $(this).offset().top
+            top = $(this).offset().top - Number(settings.threshold) - Number(1)
             bottom = top + $(this).height()
             if currentPosition >= top and currentPosition <= bottom
               $("a[href=\"#" + @id + "\"]").addClass( settings.activeClass )
