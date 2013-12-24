@@ -49,6 +49,3 @@ $.fn.extend
       )()
 
 
-
-$("body").fixedScrollNav
-  debug: true

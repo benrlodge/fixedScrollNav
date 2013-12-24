@@ -56,8 +56,4 @@
     }
   });
 
-  $("body").fixedScrollNav({
-    debug: true
-  });
-
 }).call(this);

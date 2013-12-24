@@ -2,7 +2,7 @@
 
 //Variables
 $basepx: 18
-
+$blue: rgb(0,135,206)
 
 //Mixins
 @function pxtoem($px, $basepx)
@@ -12,38 +12,83 @@ $basepx: 18
 
 body
 	font-size: pxtoem(16, $basepx)
-	background: #5fc18b
-	margin: 1em 2em
+	background: $blue
+	font-family: 'Droid Serif', serif
+	width: 1210px
+
+	margin: 4em auto
+
+
+
+
+
+h1, h2
+	color: #fff
+	font-family: 'Oswald', sans-serif
 
 
 article
-	// padding: 1em 0
-	// margin: 0 0 4em 0
+	margin-bottom: 3em
+	padding-top: .25em
+
+	h2
+		font-size: 2em
+		color: $blue 
+	p
+		line-height: 1.4
+
 
 #mynav
-	width: 150px
+	width: 270px
 	position: fixed
+
+
+	h1, h2, h3
+		color: #fff
+		margin: 0
+
+	h1
+		color: #fff
+		text-shadow: 1px 1px 1px rgba(0,0,0,.6)
+		font-size: 3em
+		
+	h3
+		margin-top: 2em
 
 	ul
 		background: #fff
 		border-radius: 4
-		text-align: center
-		padding: .25em 0
+		padding: .25em 1em
 
 		li
 			list-style: none
 			padding: .5em 0
 
 			a
+				color: #000
 				text-decoration: none
+
+
 				&.active
-					font-weight: 900
-					color: blue
+					color: $blue
+					padding-left: .5em
+
+.code
+	margin: 1em 0
+	padding: 1em 1.5em
+	font-weight: 600
+	color: #555
+	display: block
+	background-color: #efefef
+	overflow: auto
+	border: 2px solid #dadada
+	font-family: "Courier New", Courier, monospace	
+
 
 #myContent
-	max-width: 800px
+	width: 800px
 	background: #fff
-	padding: 1em
-	margin-left: 200px
+	padding: 1em 2em
+	margin-left: 350px
 	border-radius: 4px
 	box-shadow: 0 2px 6px rgba(0,0,0,.5)
