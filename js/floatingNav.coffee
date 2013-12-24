@@ -8,13 +8,15 @@ floatScroll =
 		sections : '.floatScrollItem'
 		links : '.floatLink'
 		activeClass : 'active'
+		linksClass : 'floatLink'
+
 
 	init: ->
 		floatScroll.click()
 		floatScroll.scroll()
 
 	click: ->	
-		$("a.floatScroll").on "click", (e) ->
+		$("a."+floatScroll.vars.linksClass).on "click", (e) ->
 			e.preventDefault()
 			target = @hash
 			$target = $(target)

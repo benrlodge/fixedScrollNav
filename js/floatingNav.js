@@ -7,14 +7,15 @@
     vars: {
       sections: '.floatScrollItem',
       links: '.floatLink',
-      activeClass: 'active'
+      activeClass: 'active',
+      linksClass: 'floatLink'
     },
     init: function() {
       floatScroll.click();
       return floatScroll.scroll();
     },
     click: function() {
-      return $("a.floatScroll").on("click", function(e) {
+      return $("a." + floatScroll.vars.linksClass).on("click", function(e) {
         var $target, target;
         e.preventDefault();
         target = this.hash;
