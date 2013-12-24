@@ -1,0 +1,30 @@
+body {
+  font-size: 0.88889em;
+  background: #5fc18b;
+  margin: 1em 2em; }
+
+#mynav {
+  width: 100px;
+  background: white;
+  border-radius: 4;
+  text-align: center;
+  padding: 0.25em 0;
+  position: fixed; }
+  #mynav ul {
+    padding: 0; }
+    #mynav ul li {
+      list-style: none;
+      padding: 0.5em 0; }
+      #mynav ul li a {
+        text-decoration: none; }
+        #mynav ul li a.active {
+          font-weight: 900;
+          color: blue; }
+
+#myContent {
+  max-width: 800px;
+  background: white;
+  padding: 1em;
+  margin-left: 200px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); }
