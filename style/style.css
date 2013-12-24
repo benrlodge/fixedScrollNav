@@ -4,14 +4,13 @@ body {
   margin: 1em 2em; }
 
 #mynav {
-  width: 100px;
-  background: white;
-  border-radius: 4;
-  text-align: center;
-  padding: 0.25em 0;
+  width: 150px;
   position: fixed; }
   #mynav ul {
-    padding: 0; }
+    background: white;
+    border-radius: 4;
+    text-align: center;
+    padding: 0.25em 0; }
     #mynav ul li {
       list-style: none;
       padding: 0.5em 0; }

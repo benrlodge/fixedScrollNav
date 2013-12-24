@@ -1,49 +1,68 @@
 (function() {
-  var floatScroll;
+  var $;
 
-  $(document).ready(function() {});
+  $ = jQuery;
 
-  floatScroll = {
-    vars: {
-      sections: '.floatScrollItem',
-      links: '.floatLink',
-      activeClass: 'active',
-      linksClass: 'floatLink'
-    },
-    init: function() {
-      floatScroll.click();
-      return floatScroll.scroll();
-    },
-    click: function() {
-      return $("a." + floatScroll.vars.linksClass).on("click", function(e) {
-        var $target, target;
-        e.preventDefault();
-        target = this.hash;
-        $target = $(target);
-        return $("html, body").stop().animate({
-          scrollTop: $target.offset().top
-        }, 900, "swing", function() {
-          return window.location.hash = target;
-        });
-      });
-    },
-    scroll: function() {
-      return $(window).scroll(function() {
-        var currentPosition;
-        currentPosition = $(this).scrollTop();
-        $(floatScroll.vars.links).removeClass(floatScroll.vars.activeClass);
-        return $(floatScroll.vars.sections).each(function() {
-          var bottom, top;
-          top = $(this).offset().top;
-          bottom = top + $(this).height();
-          if (currentPosition >= top && currentPosition <= bottom) {
-            return $("a[href=\"#" + this.id + "\"]").addClass(floatScroll.vars.activeClass);
-          }
-        });
+  $.fn.extend({
+    floatNav: function(options) {
+      var log, settings;
+      settings = {
+        sections: 'article',
+        linkType: 'individual',
+        links: '.nav-link',
+        activeClass: 'active',
+        animated: true,
+        scrollSpeed: 900
+      };
+      settings = $.extend(settings, options);
+      log = function(msg) {
+        if (settings.debug) {
+          return typeof console !== "undefined" && console !== null ? console.log(msg) : void 0;
+        }
+      };
+      if (settings.linkType === 'individual') {
+        log('do indiv');
+      }
+      if (settings.linkType === 'group') {
+        log('do group');
+      }
+      return this.each(function() {
+        var click, scroll;
+        (click = function() {
+          return $("a" + settings.links).on("click", function(e) {
+            var $target, target;
+            $(this).addClass('active');
+            e.preventDefault();
+            target = this.hash;
+            $target = $(target);
+            return $("html, body").stop().animate({
+              scrollTop: $target.offset().top
+            }, settings.scrollSpeed, "swing", function() {
+              return window.location.hash = target;
+            });
+          });
+        })();
+        return (scroll = function() {
+          return $(window).scroll(function() {
+            var currentPosition;
+            currentPosition = $(this).scrollTop();
+            $(settings.links).removeClass(settings.activeClass);
+            return $(settings.sections).each(function() {
+              var bottom, top;
+              top = $(this).offset().top;
+              bottom = top + $(this).height();
+              if (currentPosition >= top && currentPosition <= bottom) {
+                return $("a[href=\"#" + this.id + "\"]").addClass(settings.activeClass);
+              }
+            });
+          });
+        })();
       });
     }
-  };
+  });
 
-  floatScroll.init();
+  $("body").floatNav({
+    debug: true
+  });
 
 }).call(this);
