@@ -7,11 +7,9 @@ $.fn.extend
       sections    : 'article'     # Sections
       linkType    : 'individual'  # Choose individual or group
       links       : '.nav-link'   # Navigation Links
-      
       activeClass : 'active'      # Navigation link toggle class
       animated    : true
       scrollSpeed : 900
-
       threshold   : ''           # Update navigation x number of pixels before elements position. You may need to tweak this number for the active links to work properly based on the margin and padding between your sections
 
 
@@ -22,7 +20,8 @@ $.fn.extend
 
 
     return @each () ->
-    
+
+
       (click = -> 
         $("a"+ settings.links ).on "click", (e) ->
           $(this).addClass('active')

@@ -23,6 +23,8 @@ article {
   border-bottom: 2px solid #dadada; }
   article a {
     color: #b53d25; }
+  article p {
+    margin: 0 1em; }
   article h2 {
     font-size: 2.5em;
     color: black; }
