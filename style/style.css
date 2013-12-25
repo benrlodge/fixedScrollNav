@@ -18,11 +18,27 @@ li {
 
 article {
   margin-bottom: 3em;
-  padding-top: 0.25em; }
+  padding-top: 0.25em;
+  padding-bottom: 4em;
+  border-bottom: 2px solid #dadada; }
+  article a {
+    color: #b53d25; }
   article h2 {
     font-size: 2.5em;
     color: black; }
+    article h2 span {
+      color: #b53d25; }
+  article h3 {
+    font-size: 1.8em;
+    color: #333333; }
+  article h4 {
+    font-size: 1.6em;
+    border-bottom: 1px solid #999999;
+    padding-bottom: 0.2em;
+    display: inline-block;
+    margin-bottom: 0.3em; }
   article p {
+    margin-top: 0.25em;
     line-height: 1.5;
     font-size: 1.6em;
     color: #222222; }
@@ -36,7 +52,7 @@ article {
     margin: 0; }
   #mynav h1 {
     color: #b53d25;
-    text-shadow: 2px 2px 0 white, 4px 4px 0 #b8b7b8;
+    text-shadow: 1px 1px 0 white, 4px 4px 0 #b8b7b8;
     font-size: 6em; }
   #mynav h2 {
     font-size: 9.5em;

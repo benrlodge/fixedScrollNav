@@ -5,9 +5,7 @@
 <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-
 <link rel="stylesheet" type="text/css" href="style/style.css">
-
 
 
 </head>
@@ -24,6 +22,10 @@
 		<li> <a class='nav-link' href="#about">About fixedScrollNav.js</a> </li>
 		<li> <a class='nav-link' href="#howto">How to Use</a> </li>
 		<li> <a class='nav-link' href="#options">All the options</a> </li>
+		<li> <a class='nav-link' href="#author">The author</a> </li>
+		<li> <a class='nav-link' href="#use">Plugin use</a> </li>
+
+		
 	</ul>
 
 </nav>
@@ -33,7 +35,7 @@
 <section id="mycontent">
 
 	<article id="about">
-	<h2>About fixedScrollNav.js</h2>
+	<h2><span>~</span> About fixedScrollNav.js <span>~</span></h2>
 		
 		<p>
 			fixedScrollNav is a simple lightweight plugin that provides the framework for a (position) fixed navigation menu whose links toggle active states based on the section it is on.
@@ -45,22 +47,19 @@
 
 
 	<article id="howto">
-	<h2>How to Use</h2>
+	<h2><span>~</span> How to Use <span>~</span></h2>
 		
 
-		<p>Build the page</p>
-		<p class='code'> 
-				
-			&lt;!-- THE NAVIGATION --&gt; <br>
-			&lt;nav&gt; <br>
-				<span>&lt;ul&gt;</span> <br>
-					<span class='two'>&lt;li&gt; &lt;a class='nav-link' href="#article1"&gt; Link 1 &lt;/a&gt; &lt;/li&gt; </span><br>
-					<span class='two'>&lt;li&gt; &lt;a class='nav-link' href="#article2"&gt; Link 2 &lt;/a&gt; &lt;/li&gt;</span> <br>
-					<span class='two'>&lt;li&gt; &lt;a class='nav-link' href="#article3"&gt; Link 3 &lt;/a&gt; &lt;/li&gt;</span> <br>
-				<span>&lt;/ul&gt;</span> <br>
-			&lt;/nav&gt;<br><br>
+		<h3>1. Build the page</h3>
 
+		<p>
+			First create an id with a unique name for each section you want associated with the navigation.
 
+		</p>
+
+		
+
+		<p class="code">
 			&lt;!-- THE DESTINATION --&gt; <br>			
 			&lt;section&gt;<br>
 
@@ -84,6 +83,31 @@
 		</p>
 
 
+		<p>Next, build your navigation menu. Set the href value equal to hash + the id you created with the associated section. </p>
+
+		<p class='code'> 
+				
+			&lt;!-- THE NAVIGATION (with no extra options) --&gt; <br>
+			&lt;nav&gt; <br>
+				<span>&lt;ul&gt;</span> <br>
+					<span class='two'>&lt;li&gt; &lt;a href="#article1"&gt; Link 1 &lt;/a&gt; &lt;/li&gt; </span><br>
+					<span class='two'>&lt;li&gt; &lt;a href="#article2"&gt; Link 2 &lt;/a&gt; &lt;/li&gt;</span> <br>
+					<span class='two'>&lt;li&gt; &lt;a href="#article3"&gt; Link 3 &lt;/a&gt; &lt;/li&gt;</span> <br>
+				<span>&lt;/ul&gt;</span> <br>
+			&lt;/nav&gt;<br><br>
+
+			&lt;!-- or: THE NAVIGATION with class name (details in options below) --&gt; <br>
+			&lt;nav&gt; <br>
+				<span>&lt;ul&gt;</span> <br>
+					<span class='two'>&lt;li&gt; &lt;a class='nav-link' href="#article1"&gt; Link 1 &lt;/a&gt; &lt;/li&gt; </span><br>
+					<span class='two'>&lt;li&gt; &lt;a class='nav-link' href="#article2"&gt; Link 2 &lt;/a&gt; &lt;/li&gt;</span> <br>
+					<span class='two'>&lt;li&gt; &lt;a class='nav-link' href="#article3"&gt; Link 3 &lt;/a&gt; &lt;/li&gt;</span> <br>
+				<span>&lt;/ul&gt;</span> <br>
+			&lt;/nav&gt;<br><br>
+
+
+
+		</p>
 
 
 
@@ -96,31 +120,85 @@
 
 				
 		<p>Power up the plugin</p>
-		<p class='code'>$('body').fixedScrollNav()</p>
+		<p class='code'>$("body").fixedScrollNav( <br>
+			<span> nav : "#myNav" </span>
+			<span>  </span>
+			<span>  </span>
+		<br>
+		)
+		</p>
 
 
 	</article>
+
+	
 
 	<article id='options'>
-		<h2>All Options</h2>
+		<h2><span>~</span> All the Options <span>~</span></h2>
+	
+	<div class='code'>
+	<table>
+		<tr> <td> sections </td> <td>:</td> <td>".mysections"</td> </tr>
+		<tr> <td> group </td> <td>:</td> <td> false </td>  	</tr>
+		<tr> <td> links </td> <td>:</td> <td>".nav-link" </td> 	</tr>
+		<tr> <td> nav </td> <td>:</td> <td>"#mynav" </td> 	</tr>
+		<tr> <td> activeClass </td> <td>:</td> <td>"myActiveClass" </td> 	</tr>
+		<tr> <td> scrollSpeed </td> <td>:</td> <td>900 </td> 	</tr>
+		<tr> <td> scroll </td> <td>:</td> <td>false </td> 	</tr>
+		<tr> <td> threshold </td> <td>:</td> <td>100 </td> 	</tr>
 
-   settings =
-      sections    : 'article'     # Sections
-      linkType    : 'individual'  # Choose individual or group
-      links       : '.nav-link'   # Navigation Links
-      
-      activeClass : 'active'      # Navigation link toggle class
-      animated    : true
-      scrollSpeed : 900
+     </table>
+	</div>
 
-      threshold   : '' 
+	<h4> sections </h4>
+	<p> Give the "sections" option a value that you want associated with each section. This tells the scrolling function when to toggle the active class in the navigation menu. </p>
 
+	<h4> group, links, &amp; nav </h4>
+	<p>By default, the plugin will assume each link within your navigation menu (set with the "nav" option) has a corresponding section. If you would like to specify which links are associated with the sections (for example, if your navigation also contains external links), set linkType to "individual" and give each internal scrolling link a classname, and include it with option "links"</p>
+	</p>
+
+	<h4> nav </h4>
+	<p> If you want to use the default "grouping" navigation link method, tell the plugin where your links live with the "nav" option. </p>
+
+
+
+	<h4> activeClass </h4>
+	<p> By default, the plugin will toggle a class named "active" with the menu links as the viewer scrolls through the page, changing sections. If you would like to use your own custom class name, use the "activeClass" option. <br>Please note: you do not need to include a " . " with the class name. For example do not do -> nav: ".myActiveClassName", instead, do -> "myActiveClassName" </p>
+    
+
+	<h4> scrollSpeed </h4>
+	<p> The plugin includes a smooth scroll to each section when a navigation link is clicked. The speed is set to 900 milliseconds by dafault. If you would like to alter the speed, do so using the "scrollSpeed" option </p>
+
+	<h4> scroll </h4>
+	<p> If you do not want an animated scroll to each section, set "scroll" to false </p>
+
+	<h4> threshold: </h4>
+	<p> By default, the plugin will toggle the active class in the navigation menu with the associated section shown on the screen as soon as the section is 1px from the top of the viewport. If you would like to change this threshold, set the number of pixels using the "threshold" option. For example, if you would like the active class to toggle when the section is 100px from the top of the viewport, aet threshold to 100. </p>
 
 
 	</article>
+
+
+
+	<article id='author'>
+		<h2><span>~</span> The Author <span>~</span></h2>
+		<p>Hi, I'm Ben Lodge. I work <a href="http://www.hubspot.com">@hubspot</a>. I like to build little plugins to make my life easier, and I store them on <a href="http://www.github.com/benrlodge">Github</a>. I whipped this up quickly on Christmas Eve - so feel free to give me a shout</p>
+	</article>
+
+
+
+	<article id='use'>
+		<h2>Plugin Use</h2>
+		<p> This plugin is held under the <a href="http://www.wtfpl.net/"> Do What the Fuck You Want to Public License.</a>
+		</p>
+	</article>
+
+
 
 
 </section>
+
+
 
 
 <script src="js/jquery.js"></script>
