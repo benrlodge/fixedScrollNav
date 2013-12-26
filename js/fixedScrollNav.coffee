@@ -8,6 +8,7 @@ $.fn.extend
       linkType    : 'individual'  # Choose individual or group
       links       : '.nav-link'   # Navigation Links
       defaultNav  : false
+      nav         : ''
       activeClass : 'active'      # Navigation link toggle class
       animated    : true
       scrollSpeed : 900
@@ -20,12 +21,10 @@ $.fn.extend
       console?.log msg if settings.debug
 
 
+
     return @each () ->
 
-      if settings.defaultNav is true
-        console.log 'true'
-        
-
+      $(settings.nav).find('a').addClass('nav-link') if settings.defaultNav is true
 
       (scroll = ->
         $(window).scroll ->
@@ -39,6 +38,7 @@ $.fn.extend
             if currentPosition >= top and currentPosition <= bottom
               $("a[href=\"#" + @id + "\"]").addClass( settings.activeClass )
       )()
+      
 
 
       (click = -> 

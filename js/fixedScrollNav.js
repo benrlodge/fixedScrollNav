@@ -11,6 +11,7 @@
         linkType: 'individual',
         links: '.nav-link',
         defaultNav: false,
+        nav: '',
         activeClass: 'active',
         animated: true,
         scrollSpeed: 900,
@@ -25,7 +26,7 @@
       return this.each(function() {
         var click, scroll;
         if (settings.defaultNav === true) {
-          console.log('true');
+          $(settings.nav).find('a').addClass('nav-link');
         }
         (scroll = function() {
           return $(window).scroll(function() {
