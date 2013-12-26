@@ -60,7 +60,7 @@
 		
 
 		<p class="code">
-			&lt;!-- THE DESTINATION --&gt; <br>			
+			&lt;!-- THE DESTINATION --&gt; <br> <br>
 			&lt;section&gt;<br>
 
 				<span>&lt;article id="#article1"&gt;</span><br>
@@ -87,21 +87,13 @@
 
 		<p class='code'> 
 				
-			&lt;!-- THE NAVIGATION (with no extra options) --&gt; <br>
-			&lt;nav&gt; <br>
-				<span>&lt;ul&gt;</span> <br>
-					<span class='two'>&lt;li&gt; &lt;a href="#article1"&gt; Link 1 &lt;/a&gt; &lt;/li&gt; </span><br>
-					<span class='two'>&lt;li&gt; &lt;a href="#article2"&gt; Link 2 &lt;/a&gt; &lt;/li&gt;</span> <br>
-					<span class='two'>&lt;li&gt; &lt;a href="#article3"&gt; Link 3 &lt;/a&gt; &lt;/li&gt;</span> <br>
-				<span>&lt;/ul&gt;</span> <br>
-			&lt;/nav&gt;<br><br>
 
-			&lt;!-- or: THE NAVIGATION with class name (details in options below) --&gt; <br>
+			&lt;!-- THE NAVIGATION --&gt; <br><br>
 			&lt;nav&gt; <br>
-				<span>&lt;ul&gt;</span> <br>
-					<span class='two'>&lt;li&gt; &lt;a class='nav-link' href="#article1"&gt; Link 1 &lt;/a&gt; &lt;/li&gt; </span><br>
-					<span class='two'>&lt;li&gt; &lt;a class='nav-link' href="#article2"&gt; Link 2 &lt;/a&gt; &lt;/li&gt;</span> <br>
-					<span class='two'>&lt;li&gt; &lt;a class='nav-link' href="#article3"&gt; Link 3 &lt;/a&gt; &lt;/li&gt;</span> <br>
+				<span>&lt;ul id="myNav"&gt;</span> <br>
+					<span class='two'>&lt;li&gt; &lt;a class="nav-link" href="#article1"&gt; Link 1 &lt;/a&gt; &lt;/li&gt; </span><br>
+					<span class='two'>&lt;li&gt; &lt;a class="nav-link" href="#article2"&gt; Link 2 &lt;/a&gt; &lt;/li&gt;</span> <br>
+					<span class='two'>&lt;li&gt; &lt;a class="nav-link" href="#article3"&gt; Link 3 &lt;/a&gt; &lt;/li&gt;</span> <br>
 				<span>&lt;/ul&gt;</span> <br>
 			&lt;/nav&gt;<br><br>
 
@@ -139,12 +131,11 @@
 	<div class='code'>
 	<table>
 		<tr> <td> sections </td> <td>:</td> <td>".mysections"</td> </tr>
-		<tr> <td> group </td> <td>:</td> <td> false </td>  	</tr>
+		<tr> <td> defaultNav </td> <td>:</td> <td> false </td>  	</tr>
+		<tr> <td> nav </td> <td>:</td> <td> "#myNav" </td>  	</tr>
 		<tr> <td> links </td> <td>:</td> <td>".nav-link" </td> 	</tr>
-		<tr> <td> nav </td> <td>:</td> <td>"#mynav" </td> 	</tr>
 		<tr> <td> activeClass </td> <td>:</td> <td>"myActiveClass" </td> 	</tr>
 		<tr> <td> scrollSpeed </td> <td>:</td> <td>900 </td> 	</tr>
-		<tr> <td> scroll </td> <td>:</td> <td>false </td> 	</tr>
 		<tr> <td> threshold </td> <td>:</td> <td>100 </td> 	</tr>
 
      </table>
@@ -153,28 +144,22 @@
 	<h4> sections </h4>
 	<p> Give the "sections" option a value that you want associated with each section. This tells the scrolling function when to toggle the active class in the navigation menu. </p>
 
-	<h4> group, links, &amp; nav </h4>
+	<h4> defaultNav &amp; links </h4>
 	<p>By default, the plugin will assume each link within your navigation menu (set with the "nav" option) has a corresponding section. If you would like to specify which links are associated with the sections (for example, if your navigation also contains external links), set linkType to "individual" and give each internal scrolling link a classname, and include it with option "links"</p>
 	</p>
 
-	<h4> nav </h4>
-	<p> If you want to use the default "grouping" navigation link method, tell the plugin where your links live with the "nav" option. </p>
-
-
 
 	<h4> activeClass </h4>
-	<p> By default, the plugin will toggle a class named "active" with the menu links as the viewer scrolls through the page, changing sections. If you would like to use your own custom class name, use the "activeClass" option. <br>Please note: you do not need to include a " . " with the class name. For example do not do -> nav: ".myActiveClassName", instead, do -> "myActiveClassName" </p>
-    
+	<p> By default, the plugin will toggle a class named "active" with the menu links as the viewer scrolls through the page, changing sections. If you would like to use your own custom class name, use the "activeClass" option. <br>Please note: you do not need to include a " . " with the class name. 
+	<br>
+	For example, do not do  nav: ".myActiveClassName" <br>
+	instead, do nav: "myActiveClassName" </p>
 
 	<h4> scrollSpeed </h4>
-	<p> The plugin includes a smooth scroll to each section when a navigation link is clicked. The speed is set to 900 milliseconds by dafault. If you would like to alter the speed, do so using the "scrollSpeed" option </p>
-
-	<h4> scroll </h4>
-	<p> If you do not want an animated scroll to each section, set "scroll" to false </p>
+	<p> The plugin includes a smooth scroll to each section when a navigation link is clicked. The speed is set to 900 milliseconds by dafault. If you would like to alter the speed, do so using the "scrollSpeed" option. Set speed to 0 to disable animation. </p>
 
 	<h4> threshold </h4>
-	<p> By default, the plugin will toggle the active class in the navigation menu with the associated section shown on the screen as soon as the section is 1px from the top of the viewport. If you would like to change this threshold, set the number of pixels using the "threshold" option. For example, if you would like the active class to toggle when the section is 100px from the top of the viewport, set threshold to 100. (This website used 150px as its threshold) Please keep in mind: The plugin will include padding as part of the section. </p>
-
+	<p> By default, the plugin will toggle the active class in the navigation menu with the associated section shown on the screen as soon as the section is 1px from the top of the viewport. If you would like to change this threshold, set the number of pixels using the "threshold" option. For example, if you would like the active class to toggle when the section is 100px from the top of the viewport, set threshold to 100. Please keep in mind: The plugin will include padding as part of the section. </p>
 
 	</article>
 
@@ -182,17 +167,16 @@
 
 	<article id='author'>
 		<h2><span>~</span> The Author <span>~</span></h2>
-		<p>Hi, I'm Ben Lodge. I work <a href="http://www.hubspot.com">@hubspot</a>. I like to build little plugins to make my life easier, and I store them on <a href="http://www.github.com/benrlodge">Github</a>. I whipped this up quickly on Christmas Eve - so feel free to give me a shout</p>
+		<p>Hi, I'm Ben Lodge. I work <a href="http://www.hubspot.com">@hubspot</a>. I like to build little plugins to make my life easier, and I store them on <a href="http://www.github.com/benrlodge">Github</a>. I whipped most of this up quickly on Christmas Eve - so feel free to give me a shout if anything is broken.</p>
 	</article>
 
 
 
 	<article id='use'>
-		<h2>Plugin Use</h2>
-		<p> This plugin is held under the <a href="http://www.wtfpl.net/"> WTFPL License.</a>
+		<h2><span>~</span> Plugin Use <span>~</span></h2>
+		<p> This plugin is under the <a href="http://www.wtfpl.net/"> WTFPL License. Do what you please.</a>
 		</p>
 	</article>
-
 
 
 
@@ -207,7 +191,7 @@
 <script>
 
 $("body").fixedScrollNav({
-  threshold: 0
+	defaultNav: true
 })
 
  </script>

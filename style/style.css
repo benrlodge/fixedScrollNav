@@ -21,6 +21,8 @@ article {
   padding-top: 0.25em;
   padding-bottom: 4em;
   border-bottom: 2px solid #dadada; }
+  article:last-child {
+    border-bottom: none; }
   article a {
     color: #b53d25; }
   article p {

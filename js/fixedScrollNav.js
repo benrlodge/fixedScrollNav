@@ -10,10 +10,11 @@
         sections: 'article',
         linkType: 'individual',
         links: '.nav-link',
+        defaultNav: false,
         activeClass: 'active',
         animated: true,
         scrollSpeed: 900,
-        threshold: ''
+        threshold: 0
       };
       settings = $.extend(settings, options);
       log = function(msg) {
@@ -23,21 +24,10 @@
       };
       return this.each(function() {
         var click, scroll;
-        (click = function() {
-          return $("a" + settings.links).on("click", function(e) {
-            var $target, target;
-            $(this).addClass('active');
-            e.preventDefault();
-            target = this.hash;
-            $target = $(target);
-            return $("html, body").stop().animate({
-              scrollTop: $target.offset().top
-            }, settings.scrollSpeed, "swing", function() {
-              return window.location.hash = target;
-            });
-          });
-        })();
-        return (scroll = function() {
+        if (settings.defaultNav === true) {
+          console.log('true');
+        }
+        (scroll = function() {
           return $(window).scroll(function() {
             var currentPosition;
             $(settings.links).removeClass(settings.activeClass);
@@ -49,6 +39,20 @@
               if (currentPosition >= top && currentPosition <= bottom) {
                 return $("a[href=\"#" + this.id + "\"]").addClass(settings.activeClass);
               }
+            });
+          });
+        })();
+        return (click = function() {
+          return $("a" + settings.links).on("click", function(e) {
+            var $target, target;
+            $(this).addClass('.' + settings.activeClass);
+            e.preventDefault();
+            target = this.hash;
+            $target = $(target);
+            return $("html, body").stop().animate({
+              scrollTop: $target.offset().top
+            }, settings.scrollSpeed, "swing", function() {
+              return window.location.hash = target;
             });
           });
         })();

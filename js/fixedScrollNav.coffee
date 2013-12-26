@@ -7,10 +7,11 @@ $.fn.extend
       sections    : 'article'     # Sections
       linkType    : 'individual'  # Choose individual or group
       links       : '.nav-link'   # Navigation Links
+      defaultNav  : false
       activeClass : 'active'      # Navigation link toggle class
       animated    : true
       scrollSpeed : 900
-      threshold   : ''           # Update navigation x number of pixels before elements position. You may need to tweak this number for the active links to work properly based on the margin and padding between your sections
+      threshold   : 0            # Update navigation x number of pixels before elements position. You may need to tweak this number for the active links to work properly based on the margin and padding between your sections
 
 
     settings = $.extend settings, options
@@ -21,18 +22,10 @@ $.fn.extend
 
     return @each () ->
 
+      if settings.defaultNav is true
+        console.log 'true'
+        
 
-      (click = -> 
-        $("a"+ settings.links ).on "click", (e) ->
-          $(this).addClass('active')
-          e.preventDefault()
-          target = @hash
-          $target = $(target)
-          $("html, body").stop().animate
-            scrollTop: $target.offset().top
-          , settings.scrollSpeed, "swing", ->
-            window.location.hash = target
-      )()
 
       (scroll = ->
         $(window).scroll ->
@@ -48,3 +41,17 @@ $.fn.extend
       )()
 
 
+      (click = -> 
+        
+        $("a"+ settings.links ).on "click", (e) ->
+          
+
+          $(this).addClass('.'+settings.activeClass)
+          e.preventDefault()
+          target = @hash
+          $target = $(target)
+          $("html, body").stop().animate
+            scrollTop: $target.offset().top
+          , settings.scrollSpeed, "swing", ->
+            window.location.hash = target
+      )()
