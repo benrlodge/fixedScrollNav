@@ -14,12 +14,7 @@ $.fn.extend
       scrollSpeed : 900
       threshold   : 0            # Update navigation x number of pixels before elements position. You may need to tweak this number for the active links to work properly based on the margin and padding between your sections
 
-
     settings = $.extend settings, options
-
-    log = (msg) ->
-      console?.log msg if settings.debug
-
 
 
     return @each () ->
@@ -38,7 +33,6 @@ $.fn.extend
             if currentPosition >= top and currentPosition <= bottom
               $("a[href=\"#" + @id + "\"]").addClass( settings.activeClass )
       )()
-      
 
 
       (click = -> 

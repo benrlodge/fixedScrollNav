@@ -5,7 +5,7 @@
 
   $.fn.extend({
     fixedScrollNav: function(options) {
-      var log, settings;
+      var settings;
       settings = {
         sections: 'article',
         linkType: 'individual',
@@ -18,11 +18,6 @@
         threshold: 0
       };
       settings = $.extend(settings, options);
-      log = function(msg) {
-        if (settings.debug) {
-          return typeof console !== "undefined" && console !== null ? console.log(msg) : void 0;
-        }
-      };
       return this.each(function() {
         var click, scroll;
         if (settings.defaultNav === true) {
