@@ -41,12 +41,13 @@
         return (click = function() {
           return $("a" + settings.links).on("click", function(e) {
             var $target, target;
-            $(this).addClass('.' + settings.activeClass);
+            console.log(settings.activeClass);
+            $(this).addClass(settings.activeClass);
             e.preventDefault();
             target = this.hash;
             $target = $(target);
             return $("html, body").stop().animate({
-              scrollTop: $target.offset().top
+              scrollTop: $target.offset().top - settings.threshold
             }, settings.scrollSpeed, "swing", function() {
               return window.location.hash = target;
             });
