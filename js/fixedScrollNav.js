@@ -10,7 +10,7 @@
         sections: 'article',
         linkType: 'individual',
         links: '.nav-link',
-        defaultNav: false,
+        defaultNav: true,
         nav: '',
         activeClass: 'active',
         animated: true,

@@ -7,7 +7,7 @@ $.fn.extend
       sections    : 'article'     # Sections
       linkType    : 'individual'  # Choose individual or group
       links       : '.nav-link'   # Navigation Links
-      defaultNav  : false
+      defaultNav  : true
       nav         : ''
       activeClass : 'active'      # Navigation link toggle class
       animated    : true
@@ -36,9 +36,9 @@ $.fn.extend
 
 
       (click = -> 
+
         
         $("a"+ settings.links ).on "click", (e) ->
-          
 
           $(this).addClass('.'+settings.activeClass)
           e.preventDefault()
