@@ -2,10 +2,10 @@ body {
   font-size: 0.88889em;
   background: #eee8ce;
   font-family: "Droid Serif", serif;
-  width: 1150px;
+  width: 1100px;
   margin: 6em auto;
   font-size: 62.5%;
-  padding-bottom: 60em; }
+  padding: 0 1em 60em 1em; }
 
 h1, h2, h3 {
   font-family: "Oswald", sans-serif; }
@@ -93,7 +93,7 @@ article {
             content: "~"; }
 
 #myContent {
-  width: 63em;
+  width: 57em;
   background: white;
   padding: 1em 2em;
   margin-left: 48em;
