@@ -39,7 +39,7 @@ $.fn.extend
 
         
         $("a"+ settings.links ).on "click", (e) ->
-          console.log settings.activeClass
+
           $(this).addClass(settings.activeClass)  #WHY IS THIS NOT WORKING?????
 
           e.preventDefault()

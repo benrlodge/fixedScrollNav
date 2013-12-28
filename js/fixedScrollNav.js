@@ -41,7 +41,6 @@
         return (click = function() {
           return $("a" + settings.links).on("click", function(e) {
             var $target, target;
-            console.log(settings.activeClass);
             $(this).addClass(settings.activeClass);
             e.preventDefault();
             target = this.hash;
